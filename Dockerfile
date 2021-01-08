@@ -14,5 +14,5 @@ RUN curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/paru.tar.gz \
 && sh -c 'find . -name "*.pkg.tar.zst" -exec sudo pacman --noconfirm -U "{}" \;' \
 && rm -rf ~/paru* ~/.cache
 VOLUME /packages
-COPY ./build-packages.sh /usr/bin/build-packages
+COPY ./dist/build-packages.sh /usr/bin/build-packages
 ENTRYPOINT ["/usr/bin/build-packages"]
