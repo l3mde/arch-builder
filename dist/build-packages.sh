@@ -4,4 +4,4 @@ sudo pacman --noconfirm -Syu
 for i in $@; do
     paru --useask --noconfirm -S $i
 done
-find ~/.cache/paru -name '*.pkg.tar.zst' -exec mv '{}' /packages \;
+find ~/.cache/paru -name '*.pkg.tar.zst' -exec cp '{}' /packages \;
