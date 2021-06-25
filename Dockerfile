@@ -2,7 +2,7 @@ FROM archlinux:latest
 RUN echo "[multilib]" >> /etc/pacman.conf \
 && echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf \
 && pacman --noconfirm -Syu base-devel sudo git cargo \
-&& pacman --noconfirm -Scc \
+; pacman --noconfirm -Scc \
 && useradd -m -b /home build \
 && echo 'build ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/build \
 && mkdir /packages \
