@@ -1,7 +1,6 @@
 FROM archlinux:latest
 RUN echo "[multilib]" >> /etc/pacman.conf \
 && echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf \
-&& pacman-db-upgrade \
 && pacman --noconfirm -Syu base-devel sudo git cargo \
 ; pacman --noconfirm -Scc \
 && useradd -m -b /home build \
