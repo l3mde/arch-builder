@@ -3,7 +3,7 @@ CURR_DIR_PATH="$(cd "$(dirname "${0}")"; pwd)"
 CURR_DIR_NAME="${CURR_DIR_PATH##*/}"
 PKG_DIR_PATH="${CURR_DIR_PATH}/packages"
 
-IMAGE_TAG="${CURR_DIR_NAME}:latest"
+IMAGE_TAG="l3mde/${CURR_DIR_NAME}:latest"
 
 if [[ -n ${NO_CACHE} ]]; then
     NO_CACHE="--no-cache"
