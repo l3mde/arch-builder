@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+sudo /usr/bin/bash -c "${ROOT_CMD}"
+/usr/bin/bash -c "${USER_CMD}"
 mkdir -p ~/.cache/paru
 sudo pacman --noconfirm -Syu
 for i in $@; do

@@ -1,4 +1,6 @@
 FROM archlinux:latest
+ENV ROOT_CMD="echo root-cmd; whoami"
+ENV USER_CMD="echo user-cmd; whoami"
 RUN echo "[multilib]" >> /etc/pacman.conf \
 && echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf \
 && pacman --noconfirm -Syu base-devel sudo git cargo \

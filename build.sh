@@ -11,5 +11,6 @@ fi
 
 mkdir "${PKG_DIR_PATH}"
 
+docker pull archlinux:latest
 docker build ${NO_CACHE} -t "${IMAGE_TAG}" "${CURR_DIR_PATH}"
-docker run -ti --rm --name "arch-builder" -v "${PKG_DIR_PATH}:/packages" "${IMAGE_TAG}" ${@}
+docker run -ti --rm --name "arch-builder" -v "${PKG_DIR_PATH}:/packages" -e USER_CMD="curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --yes --import -" "${IMAGE_TAG}" ${@}
